@@ -1,0 +1,14 @@
+* refactor create and totext into non ::CLI components
+
+* better filtering for create command
+
+* docs
+
+* a catalyst based in-the-browser editor (low priority)
+
+* http://www.xray.mpe.mpg.de/mailing-lists/ support (downloading, linking)
+
+* the 'scrub' command to auto hide threads, clean subjects, etc
+
+* nntp to multiple mbox mirroring scheme
+
