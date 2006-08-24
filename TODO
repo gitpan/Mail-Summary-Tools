@@ -1,6 +1,6 @@
 * refactor create and totext into non ::CLI components
 
-* better filtering for create command
+* better filtering for create command (subject, etc)
 
 * docs
 
@@ -8,7 +8,27 @@
 
 * http://www.xray.mpe.mpg.de/mailing-lists/ support (downloading, linking)
 
+* http://nntp.perl.org/groups support (linking, via nntp msgid search ->
+  article number)
+
 * the 'scrub' command to auto hide threads, clean subjects, etc
 
-* nntp to multiple mbox mirroring scheme
+* switch the HTML generator to use HTML::Element based templating, and allow
+  post processing (extract body, strip divs, etc) with the --small and --body
+  options.
 
+* make the HTML output skip lists with only hidden threads
+
+* fix the totext bullet rewrapping by making a Text::Quoted like module for
+  parsing bullets (Text::Autoformat is just too insane)
+
+* Make YAML::Cache support dir levels, to e.g. split up NNTP article overviews
+  by server, then group
+
+* CLI global option --home (defaults to ~/.mailsum)
+
+* document ~/.mailsum/config in Tools.pm
+
+* document NNTP downloader's semantics
+
+* document mailsum itself

@@ -14,10 +14,11 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 60eca2e537e52f8809497d9a5b50229668d0c57a MANIFEST
-SHA1 a40676b0dee47fd3a1923fd934ab6c67549ed3d4 META.yml
-SHA1 c251e5d715bf36a64dd8b3e60ec53474bd2a0a81 Makefile.PL
-SHA1 58676accdc0bb753a5aeb4c3b52f51210d0439ce TODO
+SHA1 0864c87625aaa9f954e1127f05012f3119475c0c Changes
+SHA1 21b342b1fad8a02f261eafa2cb1a6863400d1d53 MANIFEST
+SHA1 3c5f00057b5071c944aae2ba7cfd39c6e132360e META.yml
+SHA1 34a8498e8ba0cc48e0e46f8be6b4a028e270a219 Makefile.PL
+SHA1 d26864f1cdef86ec74eb2ffb5afc19eff0bfa714 TODO
 SHA1 017bedfcba1e0c72b36301e6ef21b8712b84d175 inc/Module/Install.pm
 SHA1 b1a70869c098ba602151631386fc510b5bfd3511 inc/Module/Install/Base.pm
 SHA1 dd7313db23119d49ae78593bfa576554fb5b0fd8 inc/Module/Install/Can.pm
@@ -27,32 +28,35 @@ SHA1 8b37b38215d14f922b3d5132ce33d11d21d531ba inc/Module/Install/Metadata.pm
 SHA1 1d8f4739eda5d665bbfe4206bd87274ad104ba77 inc/Module/Install/Scripts.pm
 SHA1 7eb44b00058c44795038d7fa4c0c77470f20a7f8 inc/Module/Install/Win32.pm
 SHA1 6d05967a5e1680b5f118315aaa6b8a1e143d79d8 inc/Module/Install/WriteAll.pm
-SHA1 788db4e524a96cba25cb2416d636cfa1b324e24e lib/Mail/Summary/Tools.pm
+SHA1 e63d03a121f6541db80a91629675c71e49916541 lib/Mail/Summary/Tools.pm
 SHA1 e3c057741f72fbc03d6c30c8406627ad0869bd13 lib/Mail/Summary/Tools/ArchiveLink.pm
 SHA1 0437b85f621ff8daf92b19c9ed32ea3d60c15cf5 lib/Mail/Summary/Tools/ArchiveLink/Base.pm
 SHA1 f3d4d5a043e1737412dd6356c528fdde01e26fb2 lib/Mail/Summary/Tools/ArchiveLink/Easy.pm
 SHA1 7f482a10170a89975580590db5d0b51ba997a153 lib/Mail/Summary/Tools/ArchiveLink/Gmane.pm
 SHA1 9d8c44be0c14f24ff8ae5c42f5d2470bf36de2f7 lib/Mail/Summary/Tools/ArchiveLink/GoogleGroups.pm
 SHA1 5fc33d8c5b101f4542f3f823b9b76086dcf701fa lib/Mail/Summary/Tools/ArchiveLink/Hardcoded.pm
-SHA1 d6f02d7ff1fcd6a0fc3c7092bf22ea3db8af5579 lib/Mail/Summary/Tools/CLI.pm
-SHA1 be9da3e4475e3019ea8d39e0f94b5dddba700ed0 lib/Mail/Summary/Tools/CLI/Context.pm
-SHA1 718eedd81265a20469671559dac0ff846676f8df lib/Mail/Summary/Tools/CLI/Create.pm
-SHA1 16da0e3fe5d7d6ad719312f3bcdd82eaeeeba99a lib/Mail/Summary/Tools/CLI/Edit.pm
-SHA1 36c05af3c87d075d80c8ff9dd588854a209b2d0b lib/Mail/Summary/Tools/CLI/Help.pm
-SHA1 e435939c34ee63196a30eabe90798ca62f49bf9f lib/Mail/Summary/Tools/CLI/ToHTML.pm
-SHA1 237ea0e39c6cae486272f3407aa290c589892504 lib/Mail/Summary/Tools/CLI/ToText.pm
-SHA1 2a532ffbfcfdf131859767aa6665e0e9df090e72 lib/Mail/Summary/Tools/FlatFile.pm
-SHA1 0b819de48361078b5c1daa6769335efa7b0203b3 lib/Mail/Summary/Tools/Output/HTML.pm
+SHA1 307934730fdafd934d1919c008062709cf8efad6 lib/Mail/Summary/Tools/CLI.pm
+SHA1 e6b0175ec8f1765c99823df021e45d226f9e452f lib/Mail/Summary/Tools/CLI/Command.pm
+SHA1 cd5c1d717112bd9e79fd44d0c9e579aec8084225 lib/Mail/Summary/Tools/CLI/Config.pm
+SHA1 49131a24f147ccb5f6b06f7c5968e9adee9acd1f lib/Mail/Summary/Tools/CLI/Context.pm
+SHA1 e63c413070b3eb1c629900084369189e6f55b823 lib/Mail/Summary/Tools/CLI/Create.pm
+SHA1 93803047fc8355d46cc781415abaf8a47f30cf79 lib/Mail/Summary/Tools/CLI/Download.pm
+SHA1 6b5af0ea9671cc7a918aacb815855f140f3674d9 lib/Mail/Summary/Tools/CLI/Download/nntp.pm
+SHA1 3a2d87c5a70e50a3c5f3dc819db1b6c055013f21 lib/Mail/Summary/Tools/CLI/Edit.pm
+SHA1 0f0f0b0673dc73a8ede1159e108fb8c64850d207 lib/Mail/Summary/Tools/CLI/ToHTML.pm
+SHA1 fdb51c5dc38da1851d3b9ab23e2568e3ef549fe8 lib/Mail/Summary/Tools/CLI/ToText.pm
+SHA1 0f9f41f9f4df527566694f5b86d291b43eb8c7a1 lib/Mail/Summary/Tools/Downloader/NNTP.pm
+SHA1 e49633e3bae7453036fb5321fda959755cb37488 lib/Mail/Summary/Tools/FlatFile.pm
+SHA1 8bcd7b83518ac3e1b45e8b7d298f37b578316e10 lib/Mail/Summary/Tools/Output/HTML.pm
 SHA1 cd6a382d84abeba20ade074e9abe4ab2d999c508 lib/Mail/Summary/Tools/Output/TT.pm
-SHA1 df97b851bb0dd1e182bf55a3bc40c9a64a837e59 lib/Mail/Summary/Tools/Summary.pm
+SHA1 c108ab98b608c64a4663391f72c0b07515248a96 lib/Mail/Summary/Tools/Summary.pm
 SHA1 d5de417237dd8b6f219fe488923ef87443fd6b0b lib/Mail/Summary/Tools/Summary/List.pm
-SHA1 3643297229d46a3c0122083402fc82fa4dbd4fbb lib/Mail/Summary/Tools/Summary/Thread.pm
+SHA1 76d5bfd1e49edc27cb2137352ce7c05315c8c67f lib/Mail/Summary/Tools/Summary/Thread.pm
 SHA1 d28ec88140c27fad1a9af8d75eb4983666f825dd lib/Mail/Summary/Tools/ThreadFilter.pm
 SHA1 8735628645220b9805ee0f840acac0da55c6f750 lib/Mail/Summary/Tools/ThreadFilter/Util.pm
-SHA1 7b578097e7bc6ed2d8c36aae7cbff30d5b801e9b lib/Mail/Summary/Tools/ThreadLoader.pm
 SHA1 c6d20cf5a5a25fa0a8bf80c17652c5bdcc1b3f66 lib/Mail/Summary/Tools/YAMLCache.pm
-SHA1 cc36351abc2eb23b9469f9de2a1ed48a7f0ccf91 script/mailsum
-SHA1 b394c8be1c9868b3cab65e3ab7f2f4dfb6d9f90e t/001_use.t
+SHA1 aebc4560ca3806b61ec3852c45757588685f42fc script/mailsum
+SHA1 6a527996d67603fc9325709e0dab9f89550bf6e0 t/001_use.t
 SHA1 ce63a5ea81175228900978af2640e9e4eb00a524 t/011_archive_links_gmane.t
 SHA1 ed435c4a422974b07527ae33bf84c371a2edfdc0 t/012_archive_links_google.t
 SHA1 4b5c45eccd4b37a374b81848adbc17660b716918 t/021_thread_loader.t
@@ -63,12 +67,12 @@ SHA1 5666ad3f1d57b29b8b5fb1e471eba4ddd0861ed3 t/040_yamlcache.t
 SHA1 04ed46c4034a4496a8a883eb056e00271f88e75d t/041_flatfile_save.t
 SHA1 bb5254a769a3905b2d71b7c26544b2a5c34e918d t/042_flatfile_load.t
 SHA1 1206d874e9e4cea17a81bb60e13627e42d66e9c7 t/050_output_tt.t
-SHA1 8e7f1e101e460f6a96d835b3a154beec7701e542 t/060_thread_merge.t
+SHA1 97c2504e53a57e4736504f66254951d1201b9854 t/060_thread_merge.t
 SHA1 d625385baa3ae6e01471f4abdb8ea97ea17549bb t/data/summary.yaml
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.1 (Darwin)
 
-iD8DBQFE4PA5VCwRwOvSdBgRAmgvAKDB47W1Zlkz7amMsDMnk27AUAPqzgCfTbxK
-LnElRGn9W/W8aYZ07GRVd4M=
-=zxov
+iD8DBQFE7WZEVCwRwOvSdBgRAjShAJ4uLiXIGVUtQcWaArTu2RDXEAjpdwCgr/4+
+7358qS8d6IdY6rFR6R8Ggtc=
+=x1uf
 -----END PGP SIGNATURE-----

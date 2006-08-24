@@ -9,7 +9,8 @@ name 'Mail-Summary-Tools';
 perl_version '5.008'; # unicode
 
 requires 'Moose'                       => '0.11';
-requires 'App::CLI'                    => 0;
+requires 'App::Cmd'                    => '0.05';
+requires 'Class::Autouse'              => 0;
 requires 'Date::Range'                 => 0;
 requires 'Date::Manip'                 => 0;
 requires 'DateTime'                    => 0;
@@ -37,16 +38,19 @@ requires 'WWW::Shorten'                => 0;
 
 build_requires 'Test::More'    => 0;
 build_requires 'Test::use::ok' => 0;
+build_requires 'File::Temp'    => 0;
 
 recommends 'YAML' => '0.62';
 
 install_script 'script/mailsum';
 
-license "mit";
+license "MIT";
 
 all_from 'lib/Mail/Summary/Tools.pm';
 
-WriteAll( sign => 1 );
+sign;
+
+WriteAll;
 
 
 

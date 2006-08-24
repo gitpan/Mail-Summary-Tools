@@ -5,6 +5,7 @@ use Moose;
 
 use Mail::Summary::Tools::ArchiveLink::Easy;
 use Mail::Summary::Tools::ArchiveLink::Hardcoded;
+use Mail::Address;
 
 has subject => (
 	isa => "Str",
@@ -19,7 +20,7 @@ has message_id => (
 );
 
 has hidden => (
-	isa => "Bool",
+	isa => "Bool|Str",
 	is  => "rw",
 	required => 0,
 );
@@ -58,6 +59,48 @@ has archive_link_params => (
 	default => sub { return {} },
 );
 
+sub _extract_name {
+	# this is a slightly less eager _extract_name from Mail::Address
+	# that version was mean to chromatic, making him turn out as Chromatic
+	# the case changing logic has been removed
+	my ( $self, $name ) = @_;
+	local $_ = $name;
+
+	# trim whitespace
+	s/^\s+//;
+	s/\s+$//;
+	s/\s+/ /;
+
+	# Disregard numeric names (e.g. 123456.1234@compuserve.com)
+	return "" if /^[\d ]+$/;
+
+	# remove outermost parenthesis
+	s/^\((.*)\)$/$1/;
+
+	# remove outer quotation marks
+	s/^"(.*)"$/$1/;
+
+	# remove minimal embedded comments
+	s/\(.*?\)//g;
+
+	# remove all escapes
+	s/\\//g;
+
+	# remove internal quotation marks
+	s/^"(.*)"$/$1/;
+
+	# reverse "Last, First M." if applicable
+	s/^([^\s]+) ?, ?(.*)$/$2 $1/;
+	s/,.*//;
+
+	# some cleanup
+	s/\[[^\]]*\]//g;
+	s/(^[\s'"]+|[\s'"]+$)//g;
+	s/\s{2,}/ /g;
+
+	return $_;
+}
+
 sub from_mailbox_thread {
 	my ( $class, $thread, %options ) = @_;
 
@@ -71,13 +114,16 @@ sub from_mailbox_thread {
 	my %extra;
 
 	if ( $options{collect_posters} ) {
+		my @from_fields = map { $_->head->get('From')->study } @messages;
+
 		my %seen_email;
-		my @from_fields = grep { !$seen_email{$_->address}++ } map { $_->from } @messages;
+		my @addresses = grep { !$seen_email{$_->address}++ }
+			map { Mail::Address->parse($_->decodedBody) } @from_fields;
 
 		my @posters = map {{
-			name  => ( $_->name || $_->user ),
+			name  => $class->_extract_name($_->phrase) || $class->_extract_name($_->comment) || $_->user,
 			email => $_->address,
-		} } @from_fields;
+		}} @addresses;
 
 		$extra{posters} = \@posters;
 	}
@@ -218,7 +264,8 @@ sub merge_dates {
 
 sub merge_out_of_date {
 	my ( $self, $thread ) = @_;
-	return unless $self->summary or $thread->summary; # it can't be out of date if there's no summary
+	# it can't be out of date if there's no summary
+	return unless $self->summary or $thread->summary or $self->hidden or $thread->hidden;
 
 	# if any thread is out of date then this one becomes out of date
 
@@ -228,11 +275,11 @@ sub merge_out_of_date {
 	my $earliest = $self->earlier_thread( $thread );
 	my $latest   = $self->later_thread( $thread );
 
-	if ( $self->summary ) {
+	if ( $self->summary || $self->hidden ) {
 		# we keep the existing summary, and if the other thread extends beyond
 		# our range it's out of date
 		$out_of_date = 1 if $earliest != $self or $latest != $self;
-	} elsif ( $thread->summary ) {
+	} elsif ( $thread->summary || $thread->hidden ) {
 		# we take the new summary, and if we extend beyond the other range then
 		# it's out of date
 		$out_of_date = 1 if $earliest != $thread or $latest != $thread;

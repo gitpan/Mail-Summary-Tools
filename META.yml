@@ -1,11 +1,12 @@
 abstract: Tools for mailing list summarization.
 author: Yuval Kogman, <nothingmuch@woobling.org>
 build_requires: 
+  File::Temp: 0
   Test::More: 0
   Test::use::ok: 0
 distribution_type: module
 generated_by: Module::Install version 0.63
-license: mit
+license: MIT
 name: Mail-Summary-Tools
 no_index: 
   directory: 
@@ -14,7 +15,8 @@ no_index:
 recommends: 
   YAML: 0.62
 requires: 
-  App::CLI: 0
+  App::Cmd: 0.05
+  Class::Autouse: 0
   Date::Manip: 0
   Date::Range: 0
   DateTime: 0
@@ -41,4 +43,4 @@ requires:
   WWW::Shorten: 0
   YAML::Syck: 0.67
   perl: 5.8.0
-version: 0.01
+version: 0.02
