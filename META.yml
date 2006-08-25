@@ -15,7 +15,7 @@ no_index:
 recommends: 
   YAML: 0.62
 requires: 
-  App::Cmd: 0.05
+  App::Cmd: 0.005
   Class::Autouse: 0
   Date::Manip: 0
   Date::Range: 0
@@ -27,6 +27,7 @@ requires:
   File::Temp: 0
   FindBin: 0
   HTML::Entities: 0
+  List::MoreUtils: 0
   Mail::Box: 0
   Mail::ListDetector: 0
   Moose: 0.11
@@ -43,4 +44,4 @@ requires:
   WWW::Shorten: 0
   YAML::Syck: 0.67
   perl: 5.8.0
-version: 0.02
+version: 0.03

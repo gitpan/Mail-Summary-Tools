@@ -1,3 +1,12 @@
+0.03
+	- Fix UTF8 handling of edit --save/--load
+	- nntp article overviews are now saved in the correct place (and not my
+	  FIXME commented harcoded path ;-)
+	- fix the -e option to the edit command, which lists extra fields
+	- fix the dependency list
+	- temporarily work around a Geopt::Long::Descriptive's dealing with one_of
+	  and optional string
+
 0.02
 	- Documenation and stuff (kudra++)
 	- out_of_date gets set if a thread is hidden and gets new messages

@@ -9,7 +9,7 @@ name 'Mail-Summary-Tools';
 perl_version '5.008'; # unicode
 
 requires 'Moose'                       => '0.11';
-requires 'App::Cmd'                    => '0.05';
+requires 'App::Cmd'                    => '0.005';
 requires 'Class::Autouse'              => 0;
 requires 'Date::Range'                 => 0;
 requires 'Date::Manip'                 => 0;
@@ -21,6 +21,7 @@ requires 'File::Slurp'                 => '9999.12'; # less warnings
 requires 'File::Temp'                  => 0;
 requires 'FindBin'                     => 0;
 requires 'HTML::Entities'              => 0;
+requires 'List::MoreUtils'             => 0;
 requires 'Mail::Box'                   => 0;
 requires 'Mail::ListDetector'          => 0;
 requires 'Net::NNTP'                   => 0;
