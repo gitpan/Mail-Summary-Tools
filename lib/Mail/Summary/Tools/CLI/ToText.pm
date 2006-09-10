@@ -52,7 +52,7 @@ sub process_body {
 	my ( $self, $text ) = @_;
 
 	$text =~ s/<(\w+:\S+?)>/$self->expand_uri($1)/ge;
-	$text =~ s/\[(.*?)\]\((\w+:\S+?)\)/$self->expand_uri($2, $1)/ge;
+	$text =~ s/\[(.*?)\]\((\w+:\S+?)\)/$self->expand_uri($2, $1)/sge;
 
 	return $text;
 }
@@ -147,9 +147,9 @@ sub really_shorten {
 		}
 
 		no strict 'refs';
-		my $short = &{"${mod}::makeashorterlink"}( $uri ) || "$uri";
-		$cache->set( $cache_key, $short );
-		return $short;
+		my $short = &{"${mod}::makeashorterlink"}( $uri );
+		$cache->set( $cache_key, $short ) if $short;
+		return $short || "$uri";
 	}
 }
 
