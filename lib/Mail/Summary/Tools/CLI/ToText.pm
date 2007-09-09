@@ -276,13 +276,13 @@ __DATA__
 [% IF thread.summary %][% wrap(thread.summary) %]
 [% ELSE %]    Posters:[% FOREACH participant IN thread.extra.posters %]
     - [% participant.name %][% END %]
-[% END %][% END %][% END %][% IF num_threads > 1 %][% list_block %][% END %][% END %][% IF summary.extra.footer %][% FOREACH section IN summary.extra.footer %]
+[% END %][% END %][% END %][% IF num_threads > 0 %][% list_block %][% END %][% END %][% IF summary.extra.footer %][% FOREACH section IN summary.extra.footer %]
 [% heading(section.title) %]
 
 [% wrap(section.body) %]
 [% END %]
 [% END %][% IF summary.extra.see_also %][% heading("See Also") %]
-[% FOREACH item IN summary.extra.see_also %]
-[% link = BLOCK %][% item.name %] <[% shorten(item.uri ) %]>[% END %][% bullet(link) %]
+
+[% FOREACH item IN summary.extra.see_also %][% link = BLOCK %][% item.name %] <[% shorten(item.uri ) %]>[% END %][% bullet(link) %]
 [% END %]
 [% END %]

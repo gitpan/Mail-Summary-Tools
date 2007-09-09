@@ -22,7 +22,7 @@ has config_file => (
 );
 
 has config => (
-	isa => "Object",
+	isa => "HashRef",
 	is  => "rw",
 	lazy => 1,
 	default => sub { $_[0]->_load_config },
@@ -63,3 +63,5 @@ sub _load_config {
 		return {};
 	}
 }
+
+1;
